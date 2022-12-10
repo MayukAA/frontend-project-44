@@ -14,12 +14,7 @@ const isEven = () => {
     console.log(`Question: ${randomNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    let answer = '';
-    if (randomNumber % 2 === 0) {
-      answer = 'yes';
-    } else {
-      answer = 'no';
-    }
+    const answer = randomNumber % 2 === 0 ? 'yes' : 'no';
 
     if (userAnswer === answer) {
       console.log('Correct!');
