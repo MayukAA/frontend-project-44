@@ -14,27 +14,21 @@ const isEven = () => {
     console.log(`Question: ${randomNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
+    let answer = '';
     if (randomNumber % 2 === 0) {
-      if (userAnswer === 'yes') {
-        console.log('Correct!');
-      } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'yes'.`);
-        console.log(`Let's try again, ${userName}!`);
-        return;
-      }
+      answer = 'yes';
+    } else {
+      answer = 'no';
     }
 
-    if (randomNumber % 2 !== 0) {
-      if (userAnswer === 'no') {
-        console.log('Correct!');
-      } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'no'.`);
-        console.log(`Let's try again, ${userName}!`);
-        return;
-      }
+    if (userAnswer === answer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
   }
-
   console.log(`Congratulations, ${userName}!`);
 };
 
