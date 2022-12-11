@@ -1,14 +1,11 @@
 import readlineSync from 'readline-sync';
 import getRandomInt from '../getRandomInt.js';
+import { greeting, parting } from '../index.js';
 
-// Внезапная проблема: return не возвращает значение справа от себя!
+greeting();
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const isEven = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
   for (let i = 0; i < 3; i += 1) {
     const randomNumber = getRandomInt(1, 51);
     console.log(`Question: ${randomNumber}`);
@@ -24,7 +21,7 @@ const isEven = () => {
       return;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  parting();
 };
 
 export default isEven;

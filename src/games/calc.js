@@ -1,13 +1,11 @@
 import readlineSync from 'readline-sync';
 import getRandomInt from '../getRandomInt.js';
+import { greeting, parting } from '../index.js';
+
+greeting();
+console.log('What is the result of the expression?');
 
 const calc = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-
-  console.log('What is the result of the expression?');
-
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = getRandomInt(1, 26);
     const secondNumber = getRandomInt(1, 26);
@@ -28,10 +26,9 @@ const calc = () => {
 
     const question = `${firstNumber} ${operation} ${secondNumber}`;
     console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const userAnswerNum = Number(userAnswer);
+    const userAnswer = Number(readlineSync.question('Your answer: '));
 
-    if (userAnswerNum === answer) {
+    if (userAnswer === answer) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
@@ -39,7 +36,7 @@ const calc = () => {
       return;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  parting();
 };
 
 export default calc;
