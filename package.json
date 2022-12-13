@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/MayukAA/frontend-project-44#readme",
   "dependencies": {
+    "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
