@@ -1,9 +1,9 @@
 import getRandomInt from '../getRandomInt.js';
-import gamesCore from '../index.js';
+import runGameCore from '../index.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (number) => {
+const checkPrime = (number) => {
   if (number <= 3) {
     return true;
   }
@@ -13,23 +13,21 @@ const isPrime = (number) => {
       return false;
     }
   }
-
   return true;
 };
 
-const gameData = () => {
+const giveGameData = () => {
   const minNumber = 2;
-  const maxNumber = 101; // not include 101
+  const maxNumber = 100;
 
   const question = getRandomInt(minNumber, maxNumber);
-
-  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  const correctAnswer = checkPrime(question) ? 'yes' : 'no';
 
   return [question, correctAnswer];
 };
 
-const prime = () => {
-  gamesCore(gameRule, gameData);
+const runPrime = () => {
+  runGameCore(gameRule, giveGameData);
 };
 
-export default prime;
+export default runPrime;

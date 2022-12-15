@@ -1,12 +1,12 @@
 import getRandomInt from '../getRandomInt.js';
-import gamesCore from '../index.js';
+import runGameCore from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
 
-const gameData = () => {
+const giveGameData = () => {
   const minNumber = 1;
-  const maxNumber = 26; // not included 26
-  const maxOperationRandom = 4; // not included 4
+  const maxNumber = 25;
+  const maxOperationRandom = 3;
 
   const firstNumber = getRandomInt(minNumber, maxNumber);
   const secondNumber = getRandomInt(minNumber, maxNumber);
@@ -14,24 +14,27 @@ const gameData = () => {
   let operation;
   let correctAnswer = 0;
 
-  if (operationRandom === 1) {
-    operation = '+';
-    correctAnswer = String(firstNumber + secondNumber);
-  } else if (operationRandom === 2) {
-    operation = '-';
-    correctAnswer = String(firstNumber - secondNumber);
-  } else {
-    operation = '*';
-    correctAnswer = String(firstNumber * secondNumber);
+  switch (operationRandom) {
+    case 1:
+      operation = '+';
+      correctAnswer = firstNumber + secondNumber;
+      break;
+    case 2:
+      operation = '-';
+      correctAnswer = firstNumber - secondNumber;
+      break;
+    default:
+      operation = '*';
+      correctAnswer = firstNumber * secondNumber;
   }
 
   const question = `${firstNumber} ${operation} ${secondNumber}`;
 
-  return [question, correctAnswer];
+  return [question, String(correctAnswer)];
 };
 
 const calc = () => {
-  gamesCore(gameRule, gameData);
+  runGameCore(gameRule, giveGameData);
 };
 
 export default calc;

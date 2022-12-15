@@ -1,14 +1,10 @@
 import _ from 'lodash';
 import getRandomInt from '../getRandomInt.js';
-import gamesCore from '../index.js';
+import runGameCore from '../index.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
 const makeArray = (number, array) => {
-  if (number === 2) {
-    array.push(number);
-  }
-
   for (let i = 2; i <= number; i += 1) {
     if (number % i === 0) {
       array.push(i);
@@ -16,38 +12,30 @@ const makeArray = (number, array) => {
   }
 };
 
-const gameData = () => {
+const giveGameData = () => {
   const minNumber = 2;
-  const maxNumber = 51; // not included 51
+  const maxNumber = 50;
 
   const firstNumber = getRandomInt(minNumber, maxNumber);
   const secondNumber = getRandomInt(minNumber, maxNumber);
 
-  const divisorFirstNumber = [];
-  const divisorSecondNumber = [];
+  const divisorsFirstNumber = [];
+  const divisorsSecondNumber = [];
 
-  makeArray(firstNumber, divisorFirstNumber);
-  makeArray(secondNumber, divisorSecondNumber);
+  makeArray(firstNumber, divisorsFirstNumber);
+  makeArray(secondNumber, divisorsSecondNumber);
 
-  const divisors = _.intersection(divisorFirstNumber, divisorSecondNumber);
+  const divisors = _.intersection(divisorsFirstNumber, divisorsSecondNumber);
+  const maxDivisor = _.max(divisors);
 
-  let correctAnswer;
-  const lastDivisor = divisors[divisors.length - 1];
-
-  if
-  (divisorFirstNumber.length === 0 || divisorSecondNumber.length === 0 || divisors.length === 0) {
-    correctAnswer = String(1);
-  } else {
-    correctAnswer = String(lastDivisor);
-  }
-
+  const correctAnswer = divisors.length === 0 ? 1 : maxDivisor;
   const question = `${firstNumber} ${secondNumber}`;
 
-  return [question, correctAnswer];
+  return [question, String(correctAnswer)];
 };
 
-const gcd = () => {
-  gamesCore(gameRule, gameData);
+const runGcd = () => {
+  runGameCore(gameRule, giveGameData);
 };
 
-export default gcd;
+export default runGcd;
