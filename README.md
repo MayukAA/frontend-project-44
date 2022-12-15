@@ -14,3 +14,6 @@ https://asciinema.org/a/67q4oX8TFMg0SrBKpQvyxKzQ0
 
 brain-progression demonstration:
 https://asciinema.org/a/dhrWiPnzeLupQzNdlKLojMbnR
+
+brain-prime demonstration:
+https://asciinema.org/a/qfpQfosC7sGdrJY6GUWuPblCQ
