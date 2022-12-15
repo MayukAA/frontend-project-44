@@ -1,20 +1,22 @@
 import getRandomInt from '../getRandomInt.js';
-import gamesCore from '../index.js';
+import runGameCore from '../index.js';
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameData = () => {
+const isEven = (number) => number % 2 === 0;
+
+const giveGameData = () => {
   const minNumber = 1;
-  const maxNumber = 51; // not included 51
+  const maxNumber = 50;
 
   const question = getRandomInt(minNumber, maxNumber);
-  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
 
   return [question, correctAnswer];
 };
 
-const isEven = () => {
-  gamesCore(gameRule, gameData);
+const even = () => {
+  runGameCore(gameRule, giveGameData);
 };
 
-export default isEven;
+export default even;
