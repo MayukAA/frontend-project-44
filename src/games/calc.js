@@ -8,8 +8,8 @@ const giveGameData = () => {
   const maxNumber = 25;
   const maxOperationRandom = 3;
 
-  const firstNumber = getRandomInt(minNumber, maxNumber);
-  const secondNumber = getRandomInt(minNumber, maxNumber);
+  const number1 = getRandomInt(minNumber, maxNumber);
+  const number2 = getRandomInt(minNumber, maxNumber);
   const operationRandom = getRandomInt(minNumber, maxOperationRandom);
   let operation;
   let correctAnswer = 0;
@@ -17,18 +17,18 @@ const giveGameData = () => {
   switch (operationRandom) {
     case 1:
       operation = '+';
-      correctAnswer = firstNumber + secondNumber;
+      correctAnswer = number1 + number2;
       break;
     case 2:
       operation = '-';
-      correctAnswer = firstNumber - secondNumber;
+      correctAnswer = number1 - number2;
       break;
     default:
       operation = '*';
-      correctAnswer = firstNumber * secondNumber;
+      correctAnswer = number1 * number2;
   }
 
-  const question = `${firstNumber} ${operation} ${secondNumber}`;
+  const question = `${number1} ${operation} ${number2}`;
 
   return [question, String(correctAnswer)];
 };

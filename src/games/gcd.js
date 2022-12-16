@@ -4,11 +4,7 @@ import runGameCore from '../index.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
-<<<<<<< HEAD
 const formDivisors = (number, array) => {
-=======
-const makeArray = (number, array) => {
->>>>>>> 6ed75b821dd8264898fdac95bd4a508795ce8198
   for (let i = 2; i <= number; i += 1) {
     if (number % i === 0) {
       array.push(i);
@@ -20,25 +16,20 @@ const giveGameData = () => {
   const minNumber = 2;
   const maxNumber = 50;
 
-  const firstNumber = getRandomInt(minNumber, maxNumber);
-  const secondNumber = getRandomInt(minNumber, maxNumber);
+  const number1 = getRandomInt(minNumber, maxNumber);
+  const number2 = getRandomInt(minNumber, maxNumber);
 
-  const divisorsFirstNumber = [];
-  const divisorsSecondNumber = [];
+  const divisorsNumber1 = [];
+  const divisorsNumber2 = [];
 
-<<<<<<< HEAD
-  formDivisors(firstNumber, divisorsFirstNumber);
-  formDivisors(secondNumber, divisorsSecondNumber);
-=======
-  makeArray(firstNumber, divisorsFirstNumber);
-  makeArray(secondNumber, divisorsSecondNumber);
->>>>>>> 6ed75b821dd8264898fdac95bd4a508795ce8198
+  formDivisors(number1, divisorsNumber1);
+  formDivisors(number2, divisorsNumber2);
 
-  const divisors = _.intersection(divisorsFirstNumber, divisorsSecondNumber);
+  const divisors = _.intersection(divisorsNumber1, divisorsNumber2);
   const maxDivisor = _.max(divisors);
 
   const correctAnswer = divisors.length === 0 ? 1 : maxDivisor;
-  const question = `${firstNumber} ${secondNumber}`;
+  const question = `${number1} ${number2}`;
 
   return [question, String(correctAnswer)];
 };
