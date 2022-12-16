@@ -3,12 +3,21 @@ import runGameCore from '../index.js';
 
 const gameRule = 'What number is missing in the progression?';
 
+<<<<<<< HEAD
 const formNumbersProgression = (number, length, step, array) => {
   let nextNumber = number;
 
   for (let i = 1; i < length; i += 1) {
     nextNumber += step;
     array.push(nextNumber);
+=======
+const makeArray = (firstNumber, progressionLength, stepProgression, arrayProgression) => {
+  let nextNumber = firstNumber;
+
+  for (let i = 1; i < progressionLength; i += 1) {
+    nextNumber += stepProgression;
+    arrayProgression.push(nextNumber);
+>>>>>>> 6ed75b821dd8264898fdac95bd4a508795ce8198
   }
 };
 
@@ -28,7 +37,11 @@ const giveGameData = () => {
 
   const arrayProgression = [firstNumber];
 
+<<<<<<< HEAD
   formNumbersProgression(firstNumber, progressionLength, stepProgression, arrayProgression);
+=======
+  makeArray(firstNumber, progressionLength, stepProgression, arrayProgression);
+>>>>>>> 6ed75b821dd8264898fdac95bd4a508795ce8198
 
   const correctAnswer = arrayProgression[missingNumber];
 

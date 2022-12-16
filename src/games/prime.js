@@ -3,7 +3,7 @@ import runGameCore from '../index.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (number) => {
+const checkPrime = (number) => {
   if (number <= 3) {
     return true;
   }
@@ -21,7 +21,11 @@ const giveGameData = () => {
   const maxNumber = 100;
 
   const question = getRandomInt(minNumber, maxNumber);
+<<<<<<< HEAD
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
+=======
+  const correctAnswer = checkPrime(question) ? 'yes' : 'no';
+>>>>>>> 6ed75b821dd8264898fdac95bd4a508795ce8198
 
   return [question, correctAnswer];
 };

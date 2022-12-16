@@ -4,7 +4,11 @@ import runGameCore from '../index.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
+<<<<<<< HEAD
 const formDivisors = (number, array) => {
+=======
+const makeArray = (number, array) => {
+>>>>>>> 6ed75b821dd8264898fdac95bd4a508795ce8198
   for (let i = 2; i <= number; i += 1) {
     if (number % i === 0) {
       array.push(i);
@@ -22,8 +26,13 @@ const giveGameData = () => {
   const divisorsFirstNumber = [];
   const divisorsSecondNumber = [];
 
+<<<<<<< HEAD
   formDivisors(firstNumber, divisorsFirstNumber);
   formDivisors(secondNumber, divisorsSecondNumber);
+=======
+  makeArray(firstNumber, divisorsFirstNumber);
+  makeArray(secondNumber, divisorsSecondNumber);
+>>>>>>> 6ed75b821dd8264898fdac95bd4a508795ce8198
 
   const divisors = _.intersection(divisorsFirstNumber, divisorsSecondNumber);
   const maxDivisor = _.max(divisors);
