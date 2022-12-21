@@ -5,38 +5,38 @@
 
 <h1 align="center">Brain Games</h1>
 
-### Описание
+### Description
 
-«Игры разума» — набор из пяти консольных игр. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново. Игры:
+Brain Games is a set of five console games. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered to be completed. Wrong answers end the game and offer to play it again. Games:
 
-- Калькулятор. Арифметические выражения, которые необходимо вычислить.
-- Прогрессия. Поиск пропущенных чисел в последовательности чисел.
-- Определение четного числа.
-- Определение наибольшего общего делителя.
-- Определение простого числа.
+- Definition of an even number.
+- Calculator. Arithmetic expressions to be evaluated.
+- Finding the Greatest Common Divisor.
+- Progression. Search for missing numbers in a sequence of numbers.
+- Definition of a prime number.
 
-### Минимальные требования
+### Minimum Requirements
 
-Установленные [Git](https://git-scm.com/) и [Node.js](https://nodejs.org/en/).
+Installed [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/).
 
-### Установка
+### Installatiom
 
-1. В терминале командной строки перейдите в каталог, в который установится игра;
-2. Склонируйте репозиторий: `git clone git@github.com:MayukAA/frontend-project-44.git`;
-3. Установите зависимости проекта: `make install`.
+1. In the command line terminal, navigate to the directory where the game will be installed;
+2. Clone the repository: `git clone git@github.com:MayukAA/frontend-project-44.git`;
+3. Install project dependencies: `make install`.
 
-### Запуск игр
+### launch games
 
-Для запуска игры в корневой директории проекта введите одну из команд:
+To launch the game in the root directory of the project, enter one of the commands:
 
-`brain-games` - приветствие;
-`brain-even` - определение четного числа;
-`brain-calc` - калькулятор;
-`brain-gcd` - определение наибольшего общего делителя;
-`brain-progression` - прогрессия;
-`brain-prime` - определение простого числа.
+- `brain-games` - greeting;
+- `brain-even` - definition of an even number;
+- `brain-calc` - calculator;
+- `brain-gcd` - finding the Greatest Common Divisor;
+- `brain-progression` - progression;
+- `brain-prime` - definition of a prime number.
 
-### Видеодемонстрация
+### Video demonstration
 
 `brain-even`:
 
