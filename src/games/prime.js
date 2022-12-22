@@ -26,8 +26,8 @@ const giveGameData = () => {
   return [question, correctAnswer];
 };
 
-const runPrime = () => {
+const runPrimeGame = () => {
   runGameCore(gameRule, giveGameData);
 };
 
-export default runPrime;
+export default runPrimeGame;

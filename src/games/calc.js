@@ -33,8 +33,8 @@ const giveGameData = () => {
   return [question, String(correctAnswer)];
 };
 
-const calc = () => {
+const runCalcGame = () => {
   runGameCore(gameRule, giveGameData);
 };
 
-export default calc;
+export default runCalcGame;

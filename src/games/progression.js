@@ -39,8 +39,8 @@ const giveGameData = () => {
   return [question, String(correctAnswer)];
 };
 
-const runProgression = () => {
+const runProgressionGame = () => {
   runGameCore(gameRule, giveGameData);
 };
 
-export default runProgression;
+export default runProgressionGame;

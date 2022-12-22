@@ -15,8 +15,8 @@ const giveGameData = () => {
   return [question, correctAnswer];
 };
 
-const even = () => {
+const runEvenGame = () => {
   runGameCore(gameRule, giveGameData);
 };
 
-export default even;
+export default runEvenGame;

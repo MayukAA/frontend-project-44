@@ -34,8 +34,8 @@ const giveGameData = () => {
   return [question, String(correctAnswer)];
 };
 
-const runGcd = () => {
+const runGcdGame = () => {
   runGameCore(gameRule, giveGameData);
 };
 
-export default runGcd;
+export default runGcdGame;
