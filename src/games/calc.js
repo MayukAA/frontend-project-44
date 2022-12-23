@@ -1,34 +1,31 @@
+import _ from 'lodash';
 import getRandomInt from '../getRandomInt.js';
 import runGameCore from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
 
+const calculateAnswer = (operand1, operand2, operator) => {
+  switch (operator) {
+    case '+':
+      return operand1 + operand2;
+    case '-':
+      return operand1 - operand2;
+    default:
+      return operand1 * operand2;
+  }
+};
+
 const giveGameData = () => {
   const minNumber = 1;
   const maxNumber = 25;
-  const maxOperationRandom = 3;
+  const operators = ['+', '-', '*'];
 
   const number1 = getRandomInt(minNumber, maxNumber);
   const number2 = getRandomInt(minNumber, maxNumber);
-  const operationRandom = getRandomInt(minNumber, maxOperationRandom);
-  let operation;
-  let correctAnswer = 0;
+  const operator = _.sample(operators);
 
-  switch (operationRandom) {
-    case 1:
-      operation = '+';
-      correctAnswer = number1 + number2;
-      break;
-    case 2:
-      operation = '-';
-      correctAnswer = number1 - number2;
-      break;
-    default:
-      operation = '*';
-      correctAnswer = number1 * number2;
-  }
-
-  const question = `${number1} ${operation} ${number2}`;
+  const correctAnswer = calculateAnswer(number1, number2, operator);
+  const question = `${number1} ${operator} ${number2}`;
 
   return [question, String(correctAnswer)];
 };
