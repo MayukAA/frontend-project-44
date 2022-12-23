@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
 
+const pointsForSuccess = 3;
+
 const runGameCore = (gameRule, giveGameData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
   console.log(gameRule);
-
-  const pointsForSuccess = 3;
 
   for (let i = 0; i < pointsForSuccess; i += 1) {
     const [question, correctAnswer] = giveGameData();
