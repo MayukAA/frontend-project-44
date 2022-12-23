@@ -25,7 +25,7 @@ Installed [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/).
 2. Clone the repository: `git clone git@github.com:MayukAA/frontend-project-44.git`;
 3. Install project dependencies: `make install`.
 
-### launch games
+### Launch Games
 
 To launch the game in the root directory of the project, enter one of the commands:
 
@@ -36,7 +36,7 @@ To launch the game in the root directory of the project, enter one of the comman
 - `brain-progression` - progression;
 - `brain-prime` - definition of a prime number.
 
-### Video demonstration
+### Video Demonstration
 
 `brain-even`:
 
