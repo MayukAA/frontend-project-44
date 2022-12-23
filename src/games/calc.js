@@ -2,6 +2,10 @@ import _ from 'lodash';
 import getRandomInt from '../getRandomInt.js';
 import runGameCore from '../index.js';
 
+const minNumber = 1;
+const maxNumber = 25;
+const operators = ['+', '-', '*'];
+
 const gameRule = 'What is the result of the expression?';
 
 const calculateAnswer = (operand1, operand2, operator) => {
@@ -16,16 +20,12 @@ const calculateAnswer = (operand1, operand2, operator) => {
 };
 
 const giveGameData = () => {
-  const minNumber = 1;
-  const maxNumber = 25;
-  const operators = ['+', '-', '*'];
-
   const number1 = getRandomInt(minNumber, maxNumber);
   const number2 = getRandomInt(minNumber, maxNumber);
   const operator = _.sample(operators);
 
-  const correctAnswer = calculateAnswer(number1, number2, operator);
   const question = `${number1} ${operator} ${number2}`;
+  const correctAnswer = calculateAnswer(number1, number2, operator);
 
   return [question, String(correctAnswer)];
 };
