@@ -23,8 +23,6 @@ const generateGameData = () => {
   return [question, correctAnswer];
 };
 
-const runPrimeGame = () => {
-  runGameCore(gameRule, generateGameData);
-};
+const runPrimeGame = () => runGameCore(gameRule, generateGameData);
 
 export default runPrimeGame;

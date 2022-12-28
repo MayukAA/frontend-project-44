@@ -30,8 +30,6 @@ const generateGameData = () => {
   return [question, String(correctAnswer)];
 };
 
-const runCalcGame = () => {
-  runGameCore(gameRule, generateGameData);
-};
+const runCalcGame = () => runGameCore(gameRule, generateGameData);
 
 export default runCalcGame;

@@ -5,10 +5,13 @@ const gameRule = 'What number is missing in the progression?';
 
 const generateProgression = (number, length, step) => {
   const array = [number];
+  let nextNumber = number;
+
   for (let i = 1; i < length; i += 1) {
-    number += step;
-    array.push(number);
+    nextNumber += step;
+    array.push(nextNumber);
   }
+
   return array;
 };
 
@@ -29,8 +32,6 @@ const generateGameData = () => {
   return [question, String(correctAnswer)];
 };
 
-const runProgressionGame = () => {
-  runGameCore(gameRule, generateGameData);
-};
+const runProgressionGame = () => runGameCore(gameRule, generateGameData);
 
 export default runProgressionGame;
