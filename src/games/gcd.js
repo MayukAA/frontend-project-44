@@ -2,9 +2,6 @@ import _ from 'lodash';
 import getRandomInt from '../getRandomInt.js';
 import runGameCore from '../index.js';
 
-const minNumber = 2;
-const maxNumber = 50;
-
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
 const formDivisors = (number, array) => {
@@ -16,8 +13,8 @@ const formDivisors = (number, array) => {
 };
 
 const giveGameData = () => {
-  const number1 = getRandomInt(minNumber, maxNumber);
-  const number2 = getRandomInt(minNumber, maxNumber);
+  const number1 = getRandomInt(2, 50);
+  const number2 = getRandomInt(2, 50);
 
   const divisorsNumber1 = [];
   const divisorsNumber2 = [];

@@ -1,14 +1,6 @@
 import getRandomInt from '../getRandomInt.js';
 import runGameCore from '../index.js';
 
-const minFirstNumber = 1;
-const maxFirstNumber = 20;
-const minStepProgression = 2;
-const maxStepProgression = 9;
-const minProgressionLength = 5;
-const maxProgressionLength = 10;
-const minIndexMissingNumber = 0;
-
 const gameRule = 'What number is missing in the progression?';
 
 const formNumbersProgression = (number, length, step, array) => {
@@ -21,10 +13,10 @@ const formNumbersProgression = (number, length, step, array) => {
 };
 
 const giveGameData = () => {
-  const firstNumber = getRandomInt(minFirstNumber, maxFirstNumber);
-  const stepProgression = getRandomInt(minStepProgression, maxStepProgression);
-  const progressionLength = getRandomInt(minProgressionLength, maxProgressionLength);
-  const indexMissingNumber = getRandomInt(minIndexMissingNumber, progressionLength - 1);
+  const firstNumber = getRandomInt(1, 20);
+  const stepProgression = getRandomInt(2, 9);
+  const progressionLength = getRandomInt(5, 10);
+  const indexMissingNumber = getRandomInt(0, progressionLength - 1);
 
   const arrayProgression = [firstNumber];
 

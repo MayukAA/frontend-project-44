@@ -2,8 +2,6 @@ import _ from 'lodash';
 import getRandomInt from '../getRandomInt.js';
 import runGameCore from '../index.js';
 
-const minNumber = 1;
-const maxNumber = 25;
 const operators = ['+', '-', '*'];
 
 const gameRule = 'What is the result of the expression?';
@@ -20,8 +18,8 @@ const calculateAnswer = (operand1, operand2, operator) => {
 };
 
 const giveGameData = () => {
-  const number1 = getRandomInt(minNumber, maxNumber);
-  const number2 = getRandomInt(minNumber, maxNumber);
+  const number1 = getRandomInt(1, 25);
+  const number2 = getRandomInt(1, 25);
   const operator = _.sample(operators);
 
   const question = `${number1} ${operator} ${number2}`;
