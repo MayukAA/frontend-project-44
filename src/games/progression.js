@@ -12,7 +12,7 @@ const formNumbersProgression = (number, length, step, array) => {
   }
 };
 
-const giveGameData = () => {
+const generateGameData = () => {
   const firstNumber = getRandomInt(1, 20);
   const stepProgression = getRandomInt(2, 9);
   const progressionLength = getRandomInt(5, 10);
@@ -32,7 +32,7 @@ const giveGameData = () => {
 };
 
 const runProgressionGame = () => {
-  runGameCore(gameRule, giveGameData);
+  runGameCore(gameRule, generateGameData);
 };
 
 export default runProgressionGame;

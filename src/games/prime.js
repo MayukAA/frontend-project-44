@@ -16,7 +16,7 @@ const isPrime = (number) => {
   return true;
 };
 
-const giveGameData = () => {
+const generateGameData = () => {
   const question = getRandomInt(2, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
@@ -24,7 +24,7 @@ const giveGameData = () => {
 };
 
 const runPrimeGame = () => {
-  runGameCore(gameRule, giveGameData);
+  runGameCore(gameRule, generateGameData);
 };
 
 export default runPrimeGame;

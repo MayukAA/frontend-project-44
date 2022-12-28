@@ -12,7 +12,7 @@ const formDivisors = (number, array) => {
   }
 };
 
-const giveGameData = () => {
+const generateGameData = () => {
   const number1 = getRandomInt(2, 50);
   const number2 = getRandomInt(2, 50);
 
@@ -32,7 +32,7 @@ const giveGameData = () => {
 };
 
 const runGcdGame = () => {
-  runGameCore(gameRule, giveGameData);
+  runGameCore(gameRule, generateGameData);
 };
 
 export default runGcdGame;

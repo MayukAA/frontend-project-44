@@ -19,7 +19,7 @@ const calculateAnswer = (operand1, operand2, operator) => {
   }
 };
 
-const giveGameData = () => {
+const generateGameData = () => {
   const number1 = getRandomInt(1, 25);
   const number2 = getRandomInt(1, 25);
   const operator = _.sample(operators);
@@ -31,7 +31,7 @@ const giveGameData = () => {
 };
 
 const runCalcGame = () => {
-  runGameCore(gameRule, giveGameData);
+  runGameCore(gameRule, generateGameData);
 };
 
 export default runCalcGame;

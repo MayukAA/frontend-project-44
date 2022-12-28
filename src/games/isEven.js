@@ -5,7 +5,7 @@ const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (number) => number % 2 === 0;
 
-const giveGameData = () => {
+const generateGameData = () => {
   const question = getRandomInt(1, 50);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
 
@@ -13,7 +13,7 @@ const giveGameData = () => {
 };
 
 const runEvenGame = () => {
-  runGameCore(gameRule, giveGameData);
+  runGameCore(gameRule, generateGameData);
 };
 
 export default runEvenGame;
