@@ -3,13 +3,13 @@ import runGameCore from '../index.js';
 
 const gameRule = 'What number is missing in the progression?';
 
-const formNumbersProgression = (number, length, step, array) => {
-  let nextNumber = number;
-
+const generateProgression = (number, length, step) => {
+  const array = [number];
   for (let i = 1; i < length; i += 1) {
-    nextNumber += step;
-    array.push(nextNumber);
+    number += step;
+    array.push(number);
   }
+  return array;
 };
 
 const generateGameData = () => {
@@ -18,9 +18,7 @@ const generateGameData = () => {
   const progressionLength = getRandomInt(5, 10);
   const indexMissingNumber = getRandomInt(0, progressionLength - 1);
 
-  const arrayProgression = [firstNumber];
-
-  formNumbersProgression(firstNumber, progressionLength, stepProgression, arrayProgression);
+  const arrayProgression = generateProgression(firstNumber, progressionLength, stepProgression);
 
   const correctAnswer = arrayProgression[indexMissingNumber];
 
