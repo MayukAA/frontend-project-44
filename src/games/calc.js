@@ -12,8 +12,10 @@ const calculateAnswer = (operand1, operand2, operator) => {
       return operand1 + operand2;
     case '-':
       return operand1 - operand2;
-    default:
+    case '*':
       return operand1 * operand2;
+    default:
+      throw new Error(`Operator ${operator} - is invalid`);
   }
 };
 
