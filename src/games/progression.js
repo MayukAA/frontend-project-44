@@ -17,19 +17,19 @@ const generateProgression = (number, length, step) => {
 
 const generateGameData = () => {
   const firstNumber = getRandomInt(1, 20);
-  const stepProgression = getRandomInt(2, 9);
+  const progressionStep = getRandomInt(2, 9);
   const progressionLength = getRandomInt(5, 10);
   const indexMissingNumber = getRandomInt(0, progressionLength - 1);
 
-  const arrayProgression = generateProgression(firstNumber, progressionLength, stepProgression);
+  const arrayProgression = generateProgression(firstNumber, progressionLength, progressionStep);
 
-  const correctAnswer = arrayProgression[indexMissingNumber];
+  const correctAnswer = String(arrayProgression[indexMissingNumber]);
 
   arrayProgression[indexMissingNumber] = '..';
 
   const question = arrayProgression.join(' ');
 
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer];
 };
 
 const runProgressionGame = () => runGameCore(gameRule, generateGameData);

@@ -25,9 +25,9 @@ const generateGameData = () => {
   const operator = _.sample(operators);
 
   const question = `${number1} ${operator} ${number2}`;
-  const correctAnswer = calculateAnswer(number1, number2, operator);
+  const correctAnswer = String(calculateAnswer(number1, number2, operator));
 
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer];
 };
 
 const runCalcGame = () => runGameCore(gameRule, generateGameData);

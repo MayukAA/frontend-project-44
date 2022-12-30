@@ -11,13 +11,13 @@ const getGcd = (num1, num2) => {
 };
 
 const generateGameData = () => {
-  const number1 = getRandomInt(2, 50);
-  const number2 = getRandomInt(2, 50);
+  const number1 = getRandomInt(1, 50);
+  const number2 = getRandomInt(1, 50);
 
   const question = `${number1} ${number2}`;
-  const correctAnswer = getGcd(number1, number2);
+  const correctAnswer = String(getGcd(number1, number2));
 
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer];
 };
 
 const runGcdGame = () => runGameCore(gameRule, generateGameData);
